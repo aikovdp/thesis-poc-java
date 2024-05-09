@@ -1,6 +1,5 @@
-package me.aikovdp.jormungandr;
+package me.aikovdp.jormungandr.actions;
 
-import me.aikovdp.jormungandr.actions.GetDatabaseUserAction;
 import me.aikovdp.jormungandr.actions.GetDatabaseUserAction.DatabaseUser;
 import org.junit.jupiter.api.Test;
 

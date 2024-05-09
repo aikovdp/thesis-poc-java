@@ -1,6 +1,5 @@
-package me.aikovdp.jormungandr;
+package me.aikovdp.jormungandr.actions;
 
-import me.aikovdp.jormungandr.actions.GetGitHubUserAction;
 import me.aikovdp.jormungandr.actions.GetGitHubUserAction.GitHubUser;
 import org.junit.jupiter.api.Test;
 

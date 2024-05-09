@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GitHubActionTest {
+public class GetGitHubUserActionTest {
     @Test
     public void testGitHubUserAction() {
         GetGitHubUserAction action = new GetGitHubUserAction();

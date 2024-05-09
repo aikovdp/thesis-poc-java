@@ -29,8 +29,8 @@ public class LogActionTest {
         );
 
         assertEquals(
-                appender.list.getFirst().getFormattedMessage(),
-                "This is a test with APPLE and PEAR as parameters"
+                "This is a test with APPLE and PEAR as parameters",
+                appender.list.getFirst().getFormattedMessage()
         );
     }
 }

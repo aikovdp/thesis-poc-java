@@ -1,5 +1,6 @@
 plugins {
     `java-library`
+    id("org.cyclonedx.bom") version "1.8.2"
 }
 
 group = "me.aikovdp"

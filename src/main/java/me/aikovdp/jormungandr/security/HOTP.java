@@ -15,14 +15,8 @@ public final class HOTP {
 
     public static int generate(String key, long counter) {
         byte[] hash = hmacSha(key, longToByteArray(counter));
-        int offset = hash[hash.length - 1] & 0xf;
 
-        int binary =
-                ((hash[offset] & 0x7f) << 24) |
-                ((hash[offset + 1] & 0xff) << 16) |
-                ((hash[offset + 2] & 0xff) << 8) |
-                (hash[offset + 3] & 0xff);
-        return binary % (int) Math.pow(10, 6);
+        return truncate(hash) % (int) Math.pow(10, 6);
     }
 
     public static byte[] hmacSha(String keyString, byte[] bytes) {
@@ -41,5 +35,15 @@ public final class HOTP {
         ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
         buffer.putLong(value);
         return buffer.array().clone();
+    }
+
+    private static int truncate(byte[] hash) {
+        int offset = hash[hash.length - 1] & 0xf;
+
+        return
+                ((hash[offset] & 0x7f) << 24) |
+                ((hash[offset + 1] & 0xff) << 16) |
+                ((hash[offset + 2] & 0xff) << 8) |
+                (hash[offset + 3] & 0xff);
     }
 }

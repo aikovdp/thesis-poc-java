@@ -1,5 +1,6 @@
 package me.aikovdp.jormungandr.actions;
 
+import me.aikovdp.jormungandr.workflows.WorkflowContext;
 import org.jdbi.v3.core.Jdbi;
 
 public class GetDatabaseUserAction implements Action<GetDatabaseUserAction.Input, GetDatabaseUserAction.DatabaseUser> {
@@ -11,7 +12,7 @@ public class GetDatabaseUserAction implements Action<GetDatabaseUserAction.Input
     }
 
     @Override
-    public DatabaseUser execute(Input input) {
+    public DatabaseUser execute(Input input, WorkflowContext context) {
         return jdbi.withHandle(handle ->
                 handle.createQuery("SELECT id, given_name, family_name, username, email FROM users WHERE username = :username")
                         .bind("username", input.username)

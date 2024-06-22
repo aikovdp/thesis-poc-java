@@ -4,6 +4,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import me.aikovdp.jormungandr.exceptions.ActionException;
+import me.aikovdp.jormungandr.workflows.WorkflowContext;
 
 import java.io.IOException;
 import java.net.URI;
@@ -19,7 +20,7 @@ public class GetGitHubUserAction implements Action<GetGitHubUserAction.Input, Ge
             .create();
 
     @Override
-    public GitHubUser execute(Input input) {
+    public GitHubUser execute(Input input, WorkflowContext context) {
         try (var client = HttpClient.newHttpClient()) {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(GITHUB_USERS_URI.resolve(input.username))

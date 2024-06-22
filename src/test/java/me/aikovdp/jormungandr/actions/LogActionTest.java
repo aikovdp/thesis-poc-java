@@ -3,6 +3,7 @@ package me.aikovdp.jormungandr.actions;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;
+import me.aikovdp.jormungandr.workflows.WorkflowContext;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 import org.slf4j.event.Level;
@@ -24,7 +25,8 @@ public class LogActionTest {
                         Level.INFO,
                         "This is a test with {} and {} as parameters",
                         "APPLE", "PEAR"
-                )
+                ),
+                new WorkflowContext()
         );
 
         assertEquals(

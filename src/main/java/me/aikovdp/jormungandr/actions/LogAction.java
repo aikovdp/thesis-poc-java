@@ -1,5 +1,6 @@
 package me.aikovdp.jormungandr.actions;
 
+import me.aikovdp.jormungandr.workflows.WorkflowContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.event.Level;
@@ -16,7 +17,7 @@ public class LogAction implements Action<LogAction.Input, Void> {
     }
 
     @Override
-    public Void execute(Input input) {
+    public Void execute(Input input, WorkflowContext context) {
         logger.makeLoggingEventBuilder(input.level).log(input.message, input.params);
         return null;
     }

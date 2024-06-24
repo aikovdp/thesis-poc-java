@@ -39,11 +39,8 @@ public final class HOTP {
 
     private static int truncate(byte[] hash) {
         int offset = hash[hash.length - 1] & 0xf;
-
-        return
-                ((hash[offset] & 0x7f) << 24) |
-                ((hash[offset + 1] & 0xff) << 16) |
-                ((hash[offset + 2] & 0xff) << 8) |
-                (hash[offset + 3] & 0xff);
+        ByteBuffer buffer = ByteBuffer.wrap(hash);
+        // Get 4 bytes at offset index, and discard the most significant one
+        return buffer.getInt(offset) & 0x7FFFFFFF;
     }
 }

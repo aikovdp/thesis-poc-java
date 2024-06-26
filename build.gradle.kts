@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     api("org.slf4j:slf4j-api:2.0.13")
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:2.11.0")
     implementation("org.jdbi:jdbi3-core:3.45.1")
     implementation("org.bouncycastle:bcprov-jdk18on:1.78.1")
 
@@ -21,7 +21,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     testImplementation("ch.qos.logback:logback-classic:1.5.6")
-    testRuntimeOnly("org.xerial:sqlite-jdbc:3.45.3.0")
+    testRuntimeOnly("org.xerial:sqlite-jdbc:3.46.0.0")
 }
 
 java {

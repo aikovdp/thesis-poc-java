@@ -6,7 +6,9 @@ import me.aikovdp.jormungandr.workflows.WorkflowContext;
 
 import java.util.List;
 
-public class SetAttributeAction implements Action<SetAttributeAction.Input, Void> {
+import static me.aikovdp.jormungandr.actions.SetAttributeAction.*;
+
+public class SetAttributeAction implements Action<Input, Void> {
     @Override
     public Void execute(Input input, WorkflowContext context) {
         Attributes attributes = context.getOutput().computeIfAbsent(OutputKey.ATTRIBUTES, (k) -> new Attributes());

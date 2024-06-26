@@ -12,7 +12,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class GetGitHubUserAction implements Action<GetGitHubUserAction.Input, GetGitHubUserAction.GitHubUser> {
+import static me.aikovdp.jormungandr.actions.GetGitHubUserAction.*;
+
+public class GetGitHubUserAction implements Action<Input, GitHubUser> {
     private static final URI GITHUB_USERS_URI = URI.create("https://api.github.com/users/");
 
     private final Gson gson = new GsonBuilder()

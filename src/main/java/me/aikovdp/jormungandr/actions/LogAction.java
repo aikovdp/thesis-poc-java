@@ -5,7 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.event.Level;
 
-public class LogAction implements Action<LogAction.Input, Void> {
+import static me.aikovdp.jormungandr.actions.LogAction.*;
+
+public class LogAction implements Action<Input, Void> {
     private final Logger logger;
 
     public LogAction() {

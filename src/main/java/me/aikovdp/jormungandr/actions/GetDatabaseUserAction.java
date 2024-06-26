@@ -3,7 +3,9 @@ package me.aikovdp.jormungandr.actions;
 import me.aikovdp.jormungandr.workflows.WorkflowContext;
 import org.jdbi.v3.core.Jdbi;
 
-public class GetDatabaseUserAction implements Action<GetDatabaseUserAction.Input, GetDatabaseUserAction.DatabaseUser> {
+import static me.aikovdp.jormungandr.actions.GetDatabaseUserAction.*;
+
+public class GetDatabaseUserAction implements Action<Input, DatabaseUser> {
 
     private final Jdbi jdbi;
 
